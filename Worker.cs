@@ -13,27 +13,27 @@ namespace LogiSwitch
         private void start()
         {
             LogitechDeviceInterface ldi = new LogitechDeviceInterface();
+            while (true)
+            {
+                String input = ldi.Listen();
+                Console.WriteLine(input);
 
-           // while (true)
-           // {
-                //String input = ldi.Listen();
-                //Console.WriteLine(input);
+                Console.WriteLine("Source: " + input.Substring(2, 2));
+                Console.WriteLine("Pressed: " + ldi.DecodeInput(input));
 
-                //Console.WriteLine("Source: " + input.Substring(2, 2));
-                //Console.WriteLine("Pressed: " + ldi.DecodeInput(input));
+                String action = ldi.DecodeInput(input);
 
-                //String output = ldi.EncodeAction(ldi.DecodeInput(input));
-                String output = ldi.EncodeAction("Keyboard2");
-
-                if (output != "Unknown")
+                if (action.StartsWith("Mouse"))
                 {
-                    Console.WriteLine("Setting: " + output);
-                    ldi.SendToDevice(output);
+                    String output = ldi.EncodeAction("Mouse" + action.Replace("Keyboard", ""));
+
+                    if (output != "Unknown")
+                    {
+                        Console.WriteLine("Setting: " + output);
+                        ldi.SendToDevice(output);
+                    }
                 }
-
-            //};
-            
+            };
         }
-
     }
 }
