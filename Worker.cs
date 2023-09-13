@@ -6,6 +6,10 @@ namespace LogiSwitch
     {
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
+
+            TestBed tb = new TestBed();
+            tb.ShowDialog();
+
             Thread thread = new Thread(start);
             thread.Start();
         }
