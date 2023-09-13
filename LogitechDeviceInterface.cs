@@ -111,7 +111,7 @@ namespace LogiSwitch
                 case "Keyboard3":
                     return "10010911020000";
                 default:
-                    return "UnKnown";
+                    return "Unknown";
             }
         }
 

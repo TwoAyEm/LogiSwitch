@@ -23,7 +23,7 @@ namespace LogiSwitch
 
                 String action = ldi.DecodeInput(input);
 
-                if (action.StartsWith("Mouse"))
+                if (action.StartsWith("Keyboard"))
                 {
                     String output = ldi.EncodeAction("Mouse" + action.Replace("Keyboard", ""));
 
