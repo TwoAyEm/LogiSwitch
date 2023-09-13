@@ -99,13 +99,13 @@ namespace LogiSwitch
             switch (input)
             {
                 case "Mouse1":
-                    return "10030911000000";
+                    return "10010911000000";
                 case "Mouse2":
                     return "1003091E010000";
                 case "Mouse3":
                     return "10030911020000";
                 case "Keyboard1":
-                    return "10010911000000";
+                    return "10030911000000";
                 case "Keyboard2":
                     return "1001091E010000";
                 case "Keyboard3":
