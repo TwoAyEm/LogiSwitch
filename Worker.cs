@@ -16,8 +16,7 @@ namespace LogiSwitch
             while (true)
             {
                 String input = ldi.Listen();
-                Console.WriteLine(input);
-
+                Console.WriteLine("Input:" + input);
                 Console.WriteLine("Source: " + input.Substring(2, 2));
                 Console.WriteLine("Pressed: " + ldi.DecodeInput(input));
 
@@ -25,14 +24,16 @@ namespace LogiSwitch
 
                 if (action.StartsWith("Keyboard"))
                 {
-                    String output = ldi.EncodeAction("Mouse" + action.Replace("Keyboard", ""));
+                    String output = "Mouse" + action.Replace("Keyboard", "");
 
                     if (output != "Unknown")
                     {
                         Console.WriteLine("Setting: " + output);
-                        ldi.SendToDevice(output);
+                        Console.WriteLine("Sending: " + ldi.EncodeAction(output));
+                        //ldi.SendToDevice(ldi.EncodeAction(output));
                     }
                 }
+                Console.WriteLine("-----");
             };
         }
     }

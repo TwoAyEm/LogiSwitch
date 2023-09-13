@@ -80,13 +80,13 @@ namespace LogiSwitch
                     return "Keyboard1";
                 case "718A":
                     return "Keyboard2";
-                case "?18A":
+                case "1109":
                     return "Keyboard3";
                 case "B269":
                     return "Mouse1";
                 case "7269":
                     return "Mouse2";
-                case "?269":
+                case "1E09":
                     return "Mouse3";
                 default:
                     Console.WriteLine("Unknown device Id: " + input.Substring(8, 4));
